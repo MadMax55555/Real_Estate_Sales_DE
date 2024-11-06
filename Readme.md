@@ -56,18 +56,22 @@ Bash
 `   pip install pandas sqlalchemy psycopg2 numpy   `
 
 ### Setup Instructions
+1.  **Download the data as csv**:  
 
-1.  **Create the Data Warehouse Schema**
+Get the data from the official website https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2022-GL/5mzw-sjtu/about_data
+and put it in data folder or use the fetch methode when reading the data ( the codeline is present just uncomment it)
+
+2.  **Create the Data Warehouse Schema**
     
 
 Run the SQL query in re_sales_dw_creation.sql to create the data warehouse schema (re\_sales\_dw in the star schema). The schema includes one fact table (sales) and five dimension tables (dim\_year, dim\_property\_type, dim\_non\_use\_code, dim\_location, dim\_sale\_date).
 
-2.  **Setup Database Connection**
+3.  **Setup Database Connection**
     
 
 In the etl\_process.ipynb notebook, set up the database connection using sqlalchemy. Modify the connection string to match your PostgreSQL credentials.
 
-3.  **Running the ETL Process**
+4.  **Running the ETL Process**
     
 
 Open the Jupyter Real Estate Sales ETL Pipeline.ipynb. Follow the steps in the notebook to perform the ETL process:
