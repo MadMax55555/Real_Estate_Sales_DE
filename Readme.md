@@ -86,7 +86,7 @@ After running the ETL process, verify the data in the sales and dimension tables
 
 SQL
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   SELECT * FROM stat.sales;  SELECT * FROM stat.dim_year;  SELECT * FROM stat.dim_property_type;  -- And so on for other dimension tables   `
+`   SELECT * FROM stat.sales;  SELECT * FROM stat.dim_year;  SELECT * FROM stat.dim_property_type;  -- And so on for other dimension tables   `
 
 ### Contributing
 
