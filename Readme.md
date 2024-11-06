@@ -1,7 +1,7 @@
 # Real Estate Sales Data Engineering ETL Project
 ----------------------------------------------
 
-This project aims to extract, transform, and load (ETL) real estate sales data into a data warehouse (re\_sales\_dw) in the stat schema.
+This project aims to extract, transform, and load (ETL) real estate sales data into a data warehouse (re\_sales\_dw) in the star schema.
 
 ### Overview
 
@@ -32,10 +32,6 @@ The data warehouse consists of one fact table and five dimension tables:
 
 The ETL process is implemented using Python with libraries like pandas, sqlalchemy, and psycopg2.
 
-### Project Structure
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Real_Estate_Sales_ETL_Project  ├── data  │   └── sales_data.csv  # Sample CSV file with sales data  ├── queries  │   └── create_dw_schema.sql  # SQL to create the data warehouse schema  ├── notebooks  │   └── etl_process.ipynb  # Jupyter notebook for ETL process  ├── README.md  # Project overview and instructions   `
-
 ### Requirements
 
 *   Python 3.7+
@@ -64,17 +60,17 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 1.  **Create the Data Warehouse Schema**
     
 
-Run the SQL query in queries/create\_dw\_schema.sql to create the data warehouse schema (re\_sales\_dw in the stat schema). The schema includes one fact table (sales) and five dimension tables (dim\_year, dim\_property\_type, dim\_nonuse\_code, dim\_location, dim\_sale\_date).
+Run the SQL query in re_sales_dw_creation.sql to create the data warehouse schema (re\_sales\_dw in the star schema). The schema includes one fact table (sales) and five dimension tables (dim\_year, dim\_property\_type, dim\_non\_use\_code, dim\_location, dim\_sale\_date).
 
-1.  **Setup Database Connection**
+2.  **Setup Database Connection**
     
 
 In the etl\_process.ipynb notebook, set up the database connection using sqlalchemy. Modify the connection string to match your PostgreSQL credentials.
 
-1.  **Running the ETL Process**
+3.  **Running the ETL Process**
     
 
-Open the Jupyter notebook notebooks/etl\_process.ipynb. Follow the steps in the notebook to perform the ETL process:
+Open the Jupyter Real Estate Sales ETL Pipeline.ipynb. Follow the steps in the notebook to perform the ETL process:
 
 *   Extract: Load sales data from data/sales\_data.csv.
     
@@ -83,7 +79,7 @@ Open the Jupyter notebook notebooks/etl\_process.ipynb. Follow the steps in the 
 *   Load: Insert data into the sales fact table and dimension tables.
     
 
-1.  **Verify Data in Database**
+4.  **Verify Data in Database**
     
 
 After running the ETL process, verify the data in the sales and dimension tables by querying the database:
@@ -103,16 +99,3 @@ If you'd like to contribute to the project:
 *   Commit and push your changes.
     
 *   Open a pull request.
-    
-
-### License
-
-This project is licensed under the MIT License.
-
-### Troubleshooting
-
-*   **Database Connection Issues:** Ensure PostgreSQL is running and the connection string is correct.
-    
-*   **Missing Packages:** Install missing packages with pip install -r requirements.txt.
-    
-*   **No Data Loaded:** Verify that the transformation logic in the notebook is correct and that the database schema is set up properly.
